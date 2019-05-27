@@ -1,0 +1,17 @@
+{
+  "basic": {
+    "name": "Rian Pauzi",
+    "label": "Data Engineer by Day, Frontend Engineer by Night",
+    "email": "pauzirian@gmail.com",
+    "phone": "6285959502653",
+    "website": "linkedin.com",
+    "Summary": "Organized and motivated frontend developer seeking to work closely with a team of experienced engineers to craft a product that has an impact.",
+    "location": {
+      "postalCode": "15118",
+      "city": "Tangerang",
+      "countryCode": "IDN",
+      "region": "JKT"
+    },
+    "pdf": "pauzi-rian.pdf"
+  }
+}
