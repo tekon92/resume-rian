@@ -1,22 +1,23 @@
 <template>
   <div id="app">
-
-    <Hero />
-    <Card />
-    <ul class="nav__container"><nav class="nav"><a class="nav__btn" href="/react-resume/">Experience</a><a class="nav__btn" href="/react-resume/💻">Skills</a><a class="nav__btn" href="/react-resume/🎒">Education</a><a class="nav__btn" href="/react-resume/📧">Contact</a></nav></ul>
+    <ul class="nav__container">
+      <nav class="nav">
+        <router-link to="/" class="nav__btn">Home</router-link>
+        <router-link to="/story" class="nav__btn">Story</router-link>
+      </nav>
+    </ul>
+    
+    <router-view/>
   </div>
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
-import Hero from './components/Hero.vue'
-import Card from './components/Card.vue'
+import Hero from '@/components/Hero'
 
 export default {
-  name: 'app',
+  name: 'App',
   components: {
-    Hero,
-    Card
+    Hero
   }
 }
 </script>
