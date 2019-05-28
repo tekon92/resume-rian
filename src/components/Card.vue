@@ -1,7 +1,6 @@
 <template>
-  <div class="card__container">
       <div class="card__content">
-        <div class="job__container" style="background: rgb(251, 140, 0);">
+         <div class="job__container" style="background: rgb(251, 140, 0);">
           <div class="job">
             <div class="job__header">
               <h3>Freelance</h3>
@@ -43,7 +42,6 @@
           </div>
         </div>
       </div>
-    </div>
 </template>
 
 <script>

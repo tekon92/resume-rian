@@ -6,8 +6,10 @@
         <router-link to="/story" class="nav__btn">Story</router-link>
       </nav>
     </ul>
-    
-    <router-view/>
+    <Hero></Hero>
+    <div class="card__container">
+      <router-view/>
+    </div>
   </div>
 </template>
 
