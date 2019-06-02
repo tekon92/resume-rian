@@ -3,7 +3,7 @@
     <ul class="nav__container">
       <nav class="nav">
         <router-link to="/" class="nav__btn">Home</router-link>
-        <router-link to="/story" class="nav__btn">Story</router-link>
+        <router-link to="/stories" class="nav__btn">Story</router-link>
       </nav>
     </ul>
     <Hero></Hero>

@@ -7,7 +7,7 @@
         <a href="rian-pauzi.pdf">PDF version</a> of the resume.
       </p>
       <div class="hero__link-container">
-        <a href="https://github.com/tekon92/react-resume" target="_blank" rel="noopener noreferrer" class="hero__link">
+        <a href="https://github.com/tekon92/resume-rian" target="_blank" rel="noopener noreferrer" class="hero__link">
           made with
           <img alt="Vue logo" src="@/assets/logo.png" class="hero__logo">
         </a>
