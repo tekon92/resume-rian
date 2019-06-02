@@ -35,8 +35,18 @@ export default new Router({
       component: Home,
     },
     {
-      path: '/education',
+      path: '/🎒',
       name: 'education',
+      component: Education
+    },
+    {
+      path: '/💻',
+      name: 'award',
+      component: Education
+    },
+    {
+      path: '/📧',
+      name: 'contact',
       component: Education
     },
     {

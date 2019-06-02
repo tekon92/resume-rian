@@ -3,8 +3,10 @@
     <ul class="nav__container">
       <nav class="nav">
         <router-link to="/" class="nav__btn">Home</router-link>
-        <router-link to="/stories" class="nav__btn">Story</router-link>
-        <router-link to="/education" class="nav__btn">Education</router-link>
+        <!-- <router-link to="/stories" class="nav__btn">Story</router-link> -->
+        <router-link to="/🎒" class="nav__btn">Education</router-link>
+        <!-- <router-link to="/💻" class="nav__btn">Award</router-link>
+        <router-link to="/📧" class="nav__btn">Contact</router-link> -->
       </nav>
     </ul>
     <Hero></Hero>

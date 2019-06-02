@@ -1,11 +1,11 @@
 <template>
   <div class="hero">
       <h1 class="hero__header">{{ resume.basic.name }}</h1>
-      <h4 class="hero__subheader">{{ resume.basic.location.city }} <span role="img" aria-label="Sun">☀️</span></h4>
+      <h4 class="hero__subheader">{{ resume.basic.location.city }} - {{ resume.basic.location.country }}<span role="img" aria-label="Sun">☀️</span></h4>
       <p>{{ resume.basic.label}}</p>
-      <p class="hero__text">
+      <!-- <p class="hero__text">
         <a href="rian-pauzi.pdf">PDF version</a> of the resume.
-      </p>
+      </p> -->
       <div class="hero__link-container">
         <a href="https://github.com/tekon92/resume-rian" target="_blank" rel="noopener noreferrer" class="hero__link">
           made with

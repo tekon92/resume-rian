@@ -9,7 +9,9 @@
         <div class="job__date">{{ startDate }} to {{ endDate }}</div><br>
         <p class="job__paragraph">{{ summary }}</p>
         <ul class="job__list">
-          <li v-for="high in highlights" :key="high"> {{ high }}</li>
+          <li v-for="(high, name) in highlights" :key="high">
+            <span class="bold">{{ name }}</span>: {{ high }}
+          </li>
         </ul>
       </div>
     </div>
@@ -102,5 +104,10 @@ export default {
   color: #4a4a4a;
 }
 
-
+/*
+ *
+ */
+span.bold {
+  font-weight: bold;
+}
 </style>
