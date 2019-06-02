@@ -5,8 +5,6 @@
           :position=work.position
           :startDate=work.startDate
           :endDate=work.endDate
-          :summary=work.summary
-          :highlights=work.highlights
           :styleObject=work.styleObject
         />
       </div>
