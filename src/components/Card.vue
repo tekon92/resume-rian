@@ -1,36 +1,26 @@
 <template>
-      <div class="card__content">
 
-         <div v-for="job in jobs.work" :key="job.id" class="job__container" v-bind:style="job.styleObject">
-          <div class="job">
-            <div class="job__header">
-              <h3>{{ job.company }}</h3>
-              <h4>{{ job.position }}</h4>
-            </div>
-            <div class="job__date">{{job.startDate}} to {{ job.endDate }}</div><br>
-            <p class="job__paragraph">{{ job.summary }}</p>
-            <ul class="job__list">
-              <li v-for="high in job.highlights" :key="high"> {{ high }}</li>
-            </ul>
-          </div>
+    <div class="job__container" v-bind:style="styleObject">
+      <div class="job">
+        <div class="job__header">
+          <h3>{{ company }}</h3>
+          <h4>{{ position }}</h4>
         </div>
-        
+        <div class="job__date">{{ startDate }} to {{ endDate }}</div><br>
+        <p class="job__paragraph">{{ summary }}</p>
+        <ul class="job__list">
+          <li v-for="high in highlights" :key="high"> {{ high }}</li>
+        </ul>
       </div>
+    </div>
+      
 </template>
 
 <script>
-import RESUMEENTRIES from '@/statics/data/resume.json'
 
 export default {
   name: 'Card',
-  computed: {
-    jobs() {
-      return RESUMEENTRIES
-    },
-    hexa() {
-      return '#'+Math.floor(Math.random()*16777215).toString(16);
-    }
-  }
+  props: ['company', 'position','startDate','endDate','summary','highlights', 'styleObject']
 }
 </script>
 
@@ -38,10 +28,8 @@ export default {
 /*
  * CARD
  */
-.card__content {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
+.card__container {
+  width: 60%;
 }
 
 /*

@@ -1,6 +1,6 @@
 <template>
 <div class="card__content" >
-        <Card v-for="work in jobs.work" :key="work"
+        <Card v-for="work in jobs.education" :key="work"
           :company=work.company
           :position=work.position
           :startDate=work.startDate

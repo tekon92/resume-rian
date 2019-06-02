@@ -66,5 +66,24 @@
         "background" : "#0091EA"
       } 
     }
+  ],
+  "education": [
+    {
+      "company": "Bina Nusantara University",
+      "current": false,
+      "position": "System Information & Management",
+      "startDate": "August 2009",
+      "endDate": "September 2014",
+      "summary": "Various projects utilizing ES6, Gatsby, Sass and WordPress.",
+      "highlights": [
+        "Improved client's development workflow by incorpating modern tools like: Webpack, Gulp, ESLint, Prettier, Jest, Ansible and others.",
+        "Ensure that the developing codebase conforms to best practices with regard to coding standards.",
+        "A/B tested multiple CTA components and improved conversions by 23%"
+      ],
+      "styleObject": {
+        "background" : "rgb(251, 140, 0)",
+        "height": "100%"
+      }    
+    }
   ]
 }

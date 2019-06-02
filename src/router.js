@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Story from './views/Story.vue'
 import Home from './views/Home.vue'
+import Education from './views/Education.vue'
 // import Card from './components/Card'
 
 Vue.use(Router)
@@ -32,12 +33,11 @@ export default new Router({
       path: '/',
       name: 'home',
       component: Home,
-      // children: [
-      //   {
-      //     path: '',
-      //     component: Story
-      //   }
-      // ]
+    },
+    {
+      path: '/education',
+      name: 'education',
+      component: Education
     },
     {
       path: '/stories',
