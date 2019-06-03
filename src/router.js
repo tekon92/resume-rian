@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import Story from './views/Story.vue'
 import Home from './views/Home.vue'
 import Education from './views/Education.vue'
-// import Card from './components/Card'
+import PDF from './components/PDFgen.vue'
 
 Vue.use(Router)
 
@@ -48,6 +48,11 @@ export default new Router({
       path: '/📧',
       name: 'contact',
       component: Education
+    },
+    {
+      path: '/pdf',
+      name: 'pdf',
+      component: PDF
     },
     {
       path: '/stories',
