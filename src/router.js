@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import Story from './views/Story.vue'
 import Home from './views/Home.vue'
 import Education from './views/Education.vue'
-import PDF from './components/PDFgen.vue'
+import PDFGen from './components/PDFgen.vue'
 
 Vue.use(Router)
 
@@ -52,7 +52,7 @@ export default new Router({
     {
       path: '/pdf',
       name: 'pdf',
-      component: PDF
+      component: PDFGen
     },
     {
       path: '/stories',
