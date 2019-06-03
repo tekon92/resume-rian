@@ -27,7 +27,7 @@
       "highlights": 
         {
           "Time Commitment": "Generate Bonus (Chest) for retailer each they passed the threshold on certain periode/season.",
-          "Tresure Chest": "Generate Bonus (Chest) for retailer each they passed the threshold.",
+          "Treasure Chest": "Generate Bonus (Chest) for retailer each they passed the threshold.",
           "CENO":"Generate Data from multiple source system, transform raw data, and dump the transoformized data into files.",
           "Customer Segmentation": "Create segmentation for subscribers based on their ARPU (Average Revenue per User).",
           "Customer360": "this project was build to give 360 view about customers. we design this apps to works with machine learning. the database was built using greenplum postgresql, r language for the machine learning, dashboard that built on desktop and mobile.",
@@ -50,8 +50,8 @@
       "summary": "Various projects utilizing Laravel, JS, CSS.",
       "highlights": {
         "Yukbaca.co.id": "Create Yukbaca.co.id, An book writing platform, and an online storefront where you can buy our authors' books.",
-        "suara.merah.putih.com": "Blog Platform and online publication."
-      }
+        "suara.merahputih.com": "Blog Platform and online publication."
+        }
       ,
       "styleObject": {
         "background" : "#4da5b0"

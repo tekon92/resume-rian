@@ -30,6 +30,20 @@ export default {
   },
   methods : {
     pdfgen () {
+      var bio = this.resume.basic
+      var work = this.resume.work
+      
+
+      // need to improve using dynamic code
+      // var workQ = ""
+      //   for (var a = 0; a < work.length; a++){
+      //     workQ += "{ stack:[\"" + work[a].company+ "\",\"" + work[a].position+"\",\""+work[a].startDate+" - "+work[a].endDate+"\",\""+work[a].summary+"\",{ ol: ["
+      //   for (var b = 0; b < Object.keys(work[a].highlights).length; b++) {
+      //     workQ += "\"" + Object.keys(work[a].highlights)[b]+ " : " + work[a].highlights[Object.keys(work[a].highlights)[b]]+"\","
+      //     }
+      //     workQ += "]}]},"
+      //   }
+
       if (pdfMake.vfs === undefined) {
         pdfMake.vfs = pdfFont.pdfMake.vfs
       }
@@ -38,17 +52,17 @@ export default {
       var docDefinition = {
         content: [
           {
-            text: this.resume.basic.name,
+            text: bio.name,
             style: 'header',
             alignment: 'center'
           },
           {
-            text: this.resume.basic.location.city + ' - ' + this.resume.basic.location.country,
+            text: bio.location.city + ' - ' + bio.location.country,
             style: 'subheader',
             alignment: 'center'
           },
           {
-            text: 'Email:'+ this.resume.basic.email +' | '+ 'Phone: '+ this.resume.basic.phone,
+            text: 'Email:'+ bio.email +' | '+ 'Phone: '+ bio.phone,
             style: 'small',
             alignment: 'center'
           },
@@ -57,6 +71,25 @@ export default {
             style: 'small',
             alignment: 'center'
           },
+          {
+            stack: [
+              bio.label, 
+              {
+                text: bio.summary,
+                style: 'small'
+              },
+            ]
+          },
+          {
+            stack: [
+              'WORK EXPERIANCE',
+              {
+                text: '===========================================================================',
+                style: 'small'
+              }
+            ]
+          },
+          { stack:["PT.Tech Mahindra Indonesia","Software Developer","July 2015 - Now","Various Projects utilizing (Greenplum - PosgtreSQL, Oracle, Shell Script, IBM DataStage, and SAP BusinessObject also DWH day to day basis monitoring.",{ ol: ["Time Commitment : Generate Bonus (Chest) for retailer each they passed the threshold on certain periode/season.","Treasure Chest : Generate Bonus (Chest) for retailer each they passed the threshold.","CENO : Generate Data from multiple source system, transform raw data, and dump the transoformized data into files.","Customer Segmentation : Create segmentation for subscribers based on their ARPU (Average Revenue per User).","Customer360 : this project was build to give 360 view about customers. we design this apps to works with machine learning. the database was built using greenplum postgresql, r language for the machine learning, dashboard that built on desktop and mobile.","Database Migration : Upgrading our old greenplum db version to the latest one. i manage to mapping table that we use, manage to check the capability of our environment, analyze which table that can be migrated first (partition table) and table that needs to be migrated the same date with migration date.","Angie2 Mobile Apps : (mobile application for retailer). we create this app so our client (hutchinson Indonesia) can track their retailer transaction and trends. i managed to design the ETL job to provide the data real time, database that we used is oracle","Hadoop Instalation : on this assignment, i need to do some research about hadoop hortonworks. the capability of their big data storage wether can give benefit to our next project. HDP hortonworks was installed on 3 server, 1 master and 2 slaves",]}]},{ stack:["PT. Growinc Indonesia","Fullstack Engineer","October 2014 - May 2015","Various projects utilizing Laravel, JS, CSS.",{ ol: ["Yukbaca.co.id : Create Yukbaca.co.id, An book writing platform, and an online storefront where you can buy our authors' books.","suara.merah.putih.com : Blog Platform and online publication.",]}]},{ stack:["customkita.com","Frontend Developer","September 2013 - January 2014","working as an internee to handle front end of online marketplace for custom products.",{ ol: ["0 : Frontend Sass development with the focus on reusability and cross-browser compatibility.","1 : OpenCart implementations.","2 : CSS and Javascript Improvement.",]}]}, 
         ],
         styles: {
           header: {
@@ -76,7 +109,7 @@ export default {
           }
         }
       }
-      pdfMake.createPdf(docDefinition).download('optionalName.pdf')
+      pdfMake.createPdf(docDefinition).download('resume-rian.pdf')
     }
   }
 }
