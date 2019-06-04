@@ -75,7 +75,7 @@
       } 
     }
   ],
-  "education": {
+  "education": [{
     "company": "Bina Nusantara University",
     "current": false,
     "position": "System Information & Management",
@@ -91,7 +91,7 @@
       "background" : "#4da5b0 ",
       "height": "100%"
     }    
-  },
+  }],
   "award": [
     {
       "company": "PT.Tech Mahindra Indonesia",

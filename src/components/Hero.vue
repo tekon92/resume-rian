@@ -35,77 +35,77 @@ export default {
       var work = this.resume.work
       var edu = this.resume.education
       
-      var style = {
-        styles: {
-          header: {
-            fontSize: 18,
-            bold: true,
-            alignment: 'justify'
-          },
-          subheader: {
-            fontSize: 15,
-            bold: true
-          },
-          quote: {
-            italics: true
-          },
-          small: {
-            fontSize: 8
-          }
-        }
-      }
+      // var style = {
+      //   styles: {
+      //     header: {
+      //       fontSize: 18,
+      //       bold: true,
+      //       alignment: 'justify'
+      //     },
+      //     subheader: {
+      //       fontSize: 15,
+      //       bold: true
+      //     },
+      //     quote: {
+      //       italics: true
+      //     },
+      //     small: {
+      //       fontSize: 8
+      //     }
+      //   }
+      // }
 
-      var header =  [
-          {
-            text: bio.name,
-            style: 'header',
-            alignment: 'center'
-          },
-          {
-            text: bio.location.city + ' - ' + bio.location.country,
-            style: 'subheader',
-            alignment: 'center'
-          },
-          {
-            text: 'Email:'+ bio.email +' | '+ 'Phone: '+ bio.phone,
-            style: 'small',
-            alignment: 'center'
-          },
-          {
-            text: '===========================================================================',
-            style: 'small',
-            alignment: 'center'
-          },
-          {
-            stack: [
-              bio.label, 
-              {
-                text: bio.summary,
-                style: 'small'
-              },
-            ]
-          },
-          {
-            stack: [
-              'WORK EXPERIANCE',
-              {
-                text: '===========================================================================',
-                style: 'small'
-              }
-            ]
-          }
-        ]
+      // var header =  [
+      //     {
+      //       text: bio.name,
+      //       style: 'header',
+      //       alignment: 'center'
+      //     },
+      //     {
+      //       text: bio.location.city + ' - ' + bio.location.country,
+      //       style: 'subheader',
+      //       alignment: 'center'
+      //     },
+      //     {
+      //       text: 'Email:'+ bio.email +' | '+ 'Phone: '+ bio.phone,
+      //       style: 'small',
+      //       alignment: 'center'
+      //     },
+      //     {
+      //       text: '===========================================================================',
+      //       style: 'small',
+      //       alignment: 'center'
+      //     },
+      //     {
+      //       stack: [
+      //         bio.label, 
+      //         {
+      //           text: bio.summary,
+      //           style: 'small'
+      //         },
+      //       ]
+      //     },
+      //     {
+      //       stack: [
+      //         'WORK EXPERIANCE',
+      //         {
+      //           text: '===========================================================================',
+      //           style: 'small'
+      //         }
+      //       ]
+      //     }
+      //   ]
       
 
       // need to improve using dynamic
-      var workQ = []
-        for (var a = 0; a < work.length; a++){
-          workQ += "{ \"stack\":[\"" + work[a].company+ "\",\"" + work[a].position+"\",\""+work[a].startDate+" - "+work[a].endDate+"\",\""+work[a].summary+"\",{ \"ol\": ["
-        for (var b = 0; b < Object.keys(work[a].highlights).length; b++) {
-          workQ += "\"" + Object.keys(work[a].highlights)[b]+ " : " + work[a].highlights[Object.keys(work[a].highlights)[b]]+"\","
-          }
-          workQ += "]}]},"
-        }
+      // var workQ = []
+      //   for (var a = 0; a < work.length; a++){
+      //     workQ += "{ \"stack\":[\"" + work[a].company+ "\",\"" + work[a].position+"\",\""+work[a].startDate+" - "+work[a].endDate+"\",\""+work[a].summary+"\",{ \"ol\": ["
+      //   for (var b = 0; b < Object.keys(work[a].highlights).length; b++) {
+      //     workQ += "\"" + Object.keys(work[a].highlights)[b]+ " : " + work[a].highlights[Object.keys(work[a].highlights)[b]]+"\","
+      //     }
+      //     workQ += "]}]},"
+      //   }
 
       if (pdfMake.vfs === undefined) {
         pdfMake.vfs = pdfFont.pdfMake.vfs
@@ -139,7 +139,7 @@ export default {
               bio.label, 
               {
                 text: bio.summary,
-                style: 'small'
+                style: 'contentWithMargin'
               },
             ],
             style: 'superMargin'
@@ -170,11 +170,11 @@ export default {
           {
             stack: [
               {
-                text: edu.company,
+                text: edu[0].company,
                 style: 'superMargin'
               },
-              edu.position,
-              edu.startDate+" - "+edu.endDate
+              edu[0].position,
+              edu[0].startDate+" - "+edu[0].endDate
             ],
             style: 'contentWithMargin'
           },
@@ -235,7 +235,7 @@ export default {
       // var intoObj = {"content": newObj}
       // var newStr = Object.assign(intoObj, style)
       
-      // console.log(edu.company)
+      // console.log(edu[0].company)
       pdfMake.createPdf(docDefinition).download('resume-rian.pdf')
     }
   }
