@@ -4,7 +4,7 @@
     "label": "Data Engineer by Day, Frontend Engineer by Night",
     "email": "pauzirian@gmail.com",
     "phone": "6285959502653",
-    "website": "linkedin.com",
+    "website": "https://tekon92.github.io/resume-rian/",
     "summary": "Organized and motivated frontend developer seeking to work closely with a team of experienced engineers to craft a product that has an impact.",
     "location": {
       "postalCode": "15118",
@@ -49,7 +49,7 @@
       "endDate": "May 2015",
       "summary": "Various projects utilizing Laravel, JS, CSS.",
       "highlights": {
-        "Yukbaca.co.id": "Create Yukbaca.co.id, An book writing platform, and an online storefront where you can buy our authors' books.",
+        "Yukbaca.co.id": "Create Yukbaca.co.id, An book writing platform, and an online storefront where you can buy our authors books.",
         "suara.merahputih.com": "Blog Platform and online publication."
         }
       ,
@@ -75,25 +75,23 @@
       } 
     }
   ],
-  "education": [
-    {
-      "company": "Bina Nusantara University",
-      "current": false,
-      "position": "System Information & Management",
-      "startDate": "August 2009",
-      "endDate": "September 2014",
-      "summary": "Various projects utilizing ES6, Gatsby, Sass and WordPress.",
-      "highlights": [
-        "Improved client's development workflow by incorpating modern tools like: Webpack, Gulp, ESLint, Prettier, Jest, Ansible and others.",
-        "Ensure that the developing codebase conforms to best practices with regard to coding standards.",
-        "A/B tested multiple CTA components and improved conversions by 23%"
-      ],
-      "styleObject": {
-        "background" : "#4da5b0 ",
-        "height": "100%"
-      }    
-    }
-  ],
+  "education": {
+    "company": "Bina Nusantara University",
+    "current": false,
+    "position": "System Information & Management",
+    "startDate": "August 2009",
+    "endDate": "September 2014",
+    "summary": "Various projects utilizing ES6, Gatsby, Sass and WordPress.",
+    "highlights": [
+      "Improved client's development workflow by incorpating modern tools like: Webpack, Gulp, ESLint, Prettier, Jest, Ansible and others.",
+      "Ensure that the developing codebase conforms to best practices with regard to coding standards.",
+      "A/B tested multiple CTA components and improved conversions by 23%"
+    ],
+    "styleObject": {
+      "background" : "#4da5b0 ",
+      "height": "100%"
+    }    
+  },
   "award": [
     {
       "company": "PT.Tech Mahindra Indonesia",

@@ -18,6 +18,7 @@
 
 <script>
 import RESUMEENTRIES from '@/statics/data/resume.json'
+import { isNullOrUndefined } from 'util';
 var pdfMake = require('pdfmake/build/pdfmake')
 var pdfFont = require('pdfmake/build/vfs_fonts')
 
@@ -32,25 +33,29 @@ export default {
     pdfgen () {
       var bio = this.resume.basic
       var work = this.resume.work
+      var edu = this.resume.education
       
-
-      // need to improve using dynamic code
-      // var workQ = ""
-      //   for (var a = 0; a < work.length; a++){
-      //     workQ += "{ stack:[\"" + work[a].company+ "\",\"" + work[a].position+"\",\""+work[a].startDate+" - "+work[a].endDate+"\",\""+work[a].summary+"\",{ ol: ["
-      //   for (var b = 0; b < Object.keys(work[a].highlights).length; b++) {
-      //     workQ += "\"" + Object.keys(work[a].highlights)[b]+ " : " + work[a].highlights[Object.keys(work[a].highlights)[b]]+"\","
-      //     }
-      //     workQ += "]}]},"
-      //   }
-
-      if (pdfMake.vfs === undefined) {
-        pdfMake.vfs = pdfFont.pdfMake.vfs
+      var style = {
+        styles: {
+          header: {
+            fontSize: 18,
+            bold: true,
+            alignment: 'justify'
+          },
+          subheader: {
+            fontSize: 15,
+            bold: true
+          },
+          quote: {
+            italics: true
+          },
+          small: {
+            fontSize: 8
+          }
+        }
       }
-      // var name = this.resume.basic.name
-      
-      var docDefinition = {
-        content: [
+
+      var header =  [
           {
             text: bio.name,
             style: 'header',
@@ -88,8 +93,109 @@ export default {
                 style: 'small'
               }
             ]
+          }
+        ]
+      
+
+      // need to improve using dynamic
+      var workQ = []
+        for (var a = 0; a < work.length; a++){
+          workQ += "{ \"stack\":[\"" + work[a].company+ "\",\"" + work[a].position+"\",\""+work[a].startDate+" - "+work[a].endDate+"\",\""+work[a].summary+"\",{ \"ol\": ["
+        for (var b = 0; b < Object.keys(work[a].highlights).length; b++) {
+          workQ += "\"" + Object.keys(work[a].highlights)[b]+ " : " + work[a].highlights[Object.keys(work[a].highlights)[b]]+"\","
+          }
+          workQ += "]}]},"
+        }
+
+      if (pdfMake.vfs === undefined) {
+        pdfMake.vfs = pdfFont.pdfMake.vfs
+      }
+      // var name = this.resume.basic.name
+      
+      var docDefinition = {
+        content: [
+          {
+            text: bio.name,
+            style: 'header',
+            alignment: 'center'
           },
-          { stack:["PT.Tech Mahindra Indonesia","Software Developer","July 2015 - Now","Various Projects utilizing (Greenplum - PosgtreSQL, Oracle, Shell Script, IBM DataStage, and SAP BusinessObject also DWH day to day basis monitoring.",{ ol: ["Time Commitment : Generate Bonus (Chest) for retailer each they passed the threshold on certain periode/season.","Treasure Chest : Generate Bonus (Chest) for retailer each they passed the threshold.","CENO : Generate Data from multiple source system, transform raw data, and dump the transoformized data into files.","Customer Segmentation : Create segmentation for subscribers based on their ARPU (Average Revenue per User).","Customer360 : this project was build to give 360 view about customers. we design this apps to works with machine learning. the database was built using greenplum postgresql, r language for the machine learning, dashboard that built on desktop and mobile.","Database Migration : Upgrading our old greenplum db version to the latest one. i manage to mapping table that we use, manage to check the capability of our environment, analyze which table that can be migrated first (partition table) and table that needs to be migrated the same date with migration date.","Angie2 Mobile Apps : (mobile application for retailer). we create this app so our client (hutchinson Indonesia) can track their retailer transaction and trends. i managed to design the ETL job to provide the data real time, database that we used is oracle","Hadoop Instalation : on this assignment, i need to do some research about hadoop hortonworks. the capability of their big data storage wether can give benefit to our next project. HDP hortonworks was installed on 3 server, 1 master and 2 slaves",]}]},{ stack:["PT. Growinc Indonesia","Fullstack Engineer","October 2014 - May 2015","Various projects utilizing Laravel, JS, CSS.",{ ol: ["Yukbaca.co.id : Create Yukbaca.co.id, An book writing platform, and an online storefront where you can buy our authors' books.","suara.merah.putih.com : Blog Platform and online publication.",]}]},{ stack:["customkita.com","Frontend Developer","September 2013 - January 2014","working as an internee to handle front end of online marketplace for custom products.",{ ol: ["0 : Frontend Sass development with the focus on reusability and cross-browser compatibility.","1 : OpenCart implementations.","2 : CSS and Javascript Improvement.",]}]}, 
+          {
+            text: bio.location.city + ' - ' + bio.location.country,
+            style: 'subheader',
+            alignment: 'center'
+          },
+          {
+            text: 'Email:'+ bio.email +' | '+ 'Phone: '+ bio.phone,
+            style: 'small',
+            alignment: 'center'
+          },
+          {
+            text: '===========================================================================',
+            style: 'small',
+            alignment: 'center'
+          },
+          {
+            stack: [
+              bio.label, 
+              {
+                text: bio.summary,
+                style: 'small'
+              },
+            ],
+            style: 'superMargin'
+          },
+          {
+            stack: [
+              'WORK EXPERIANCE',
+              {
+                text: '====================================',
+                style: 'small'
+              },
+            ],
+            style: 'notSuperMargin'
+          },
+          { stack:["PT.Tech Mahindra Indonesia","Software Developer","July 2015 - Now","Various Projects utilizing (Greenplum - PosgtreSQL, Oracle, Shell Script, IBM DataStage, and SAP BusinessObject also DWH day to day basis monitoring.",{ ol: ["Time Commitment : Generate Bonus (Chest) for retailer each they passed the threshold on certain periode/season.","Treasure Chest : Generate Bonus (Chest) for retailer each they passed the threshold.","CENO : Generate Data from multiple source system, transform raw data, and dump the transoformized data into files.","Customer Segmentation : Create segmentation for subscribers based on their ARPU (Average Revenue per User).","Customer360 : this project was build to give 360 view about customers. we design this apps to works with machine learning. the database was built using greenplum postgresql, r language for the machine learning, dashboard that built on desktop and mobile.","Database Migration : Upgrading our old greenplum db version to the latest one. i manage to mapping table that we use, manage to check the capability of our environment, analyze which table that can be migrated first (partition table) and table that needs to be migrated the same date with migration date.","Angie2 Mobile Apps : (mobile application for retailer). we create this app so our client (hutchinson Indonesia) can track their retailer transaction and trends. i managed to design the ETL job to provide the data real time, database that we used is oracle","Hadoop Instalation : on this assignment, i need to do some research about hadoop hortonworks. the capability of their big data storage wether can give benefit to our next project. HDP hortonworks was installed on 3 server, 1 master and 2 slaves",]}], style: 'contentWithMargin'},
+          { stack:["PT. Growinc Indonesia","Fullstack Engineer","October 2014 - May 2015","Various projects utilizing Laravel, JS, CSS.",{ ol: ["Yukbaca.co.id : Create Yukbaca.co.id, An book writing platform, and an online storefront where you can buy our authors' books.","suara.merah.putih.com : Blog Platform and online publication.",]}], style: 'contentWithMargin'},
+          { stack:["customkita.com","Frontend Developer","September 2013 - January 2014","working as an internee to handle front end of online marketplace for custom products.",{ ol: ["0 : Frontend Sass development with the focus on reusability and cross-browser compatibility.","1 : OpenCart implementations.","2 : CSS and Javascript Improvement.",]}], style: 'contentWithMargin'}, 
+          {
+            stack: [
+              'EDUCATION',
+              {
+                text: '====================================',
+                style: 'small'
+              },
+            ],
+            style: 'notSuperMargin'
+          },
+          {
+            stack: [
+              {
+                text: edu.company,
+                style: 'superMargin'
+              },
+              edu.position,
+              edu.startDate+" - "+edu.endDate
+            ],
+            style: 'contentWithMargin'
+          },
+          {
+            stack: [
+              'CONTACT',
+              {
+                text: '====================================',
+                style: 'small'
+              },
+            ],
+            style: 'notSuperMargin'
+          },
+          {
+            stack: [
+              "Phone :" + bio.phone,
+              "Email :" + bio.email,
+              "Website :" + bio.website
+            ],
+            style: 'contentWithMargin'
+          },
         ],
         styles: {
           header: {
@@ -106,9 +212,30 @@ export default {
           },
           small: {
             fontSize: 8
+          },
+          superMargin: {
+            margin: [0, 20, 0, 10],
+            fontSize: 15
+          },
+          notSuperMargin: {
+            margin: [0, 10, 0, 10],
+            fontSize: 15
+          },
+          contentWithMargin: {
+            margin: [0, 10, 0, 10],
+            fontSize: 12
           }
         }
       }
+  
+  
+      // var result = JSON.parse(s);
+      // var jsonP = JSON.parse(s) 
+      // var newObj = [...header, jsonP]
+      // var intoObj = {"content": newObj}
+      // var newStr = Object.assign(intoObj, style)
+      
+      // console.log(edu.company)
       pdfMake.createPdf(docDefinition).download('resume-rian.pdf')
     }
   }
