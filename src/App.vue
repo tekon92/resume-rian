@@ -27,7 +27,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 
 * {
   box-sizing: border-box;
@@ -227,6 +227,13 @@ li {
   }
 }
 
+
+/* dark mode */
+.dark, .dark .hero, .dark .job__container, .dark .hero__header {
+  background: black !important;
+  color: #fff;
+}
+/* end of dark mode */
 @media only screen and (orientation: landscape) {
   .nav__container {
     display: none;

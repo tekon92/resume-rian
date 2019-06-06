@@ -6,6 +6,11 @@
       <p class="hero__text">
         <a href="#" v-on:click="pdfgen">PDF version</a> of the resume.
       </p>
+      <p>
+        <a href="#" v-on:click="darkMode">🌓 Dark Mode</a>
+        <!-- <input type="checkbox" id="theme-toggle" v-on:click="darkMode">
+        <label for="theme-toggle"><span></span></label> -->
+      </p>
       <div class="hero__link-container">
         <a href="https://github.com/tekon92/resume-rian" target="_blank" rel="noopener noreferrer" class="hero__link">
           made with
@@ -30,6 +35,13 @@ export default {
     }
   },
   methods : {
+    darkMode() {
+      var body = document.body
+       body.classList == 'dark' ? body.classList.remove('dark') : body.classList.add('dark')
+      // localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark')
+      // console.log('Night Mode: ' + JSON.stringify(localStorage.getItem('mode')))
+      // localStorage.getItem('mode') === 'dark' ? body.classList.add('dark') : body.classList.remove('dark')
+    },
     pdfgen () {
       var bio = this.resume.basic
       var work = this.resume.work
@@ -242,7 +254,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 /*
  * HERO
  */
