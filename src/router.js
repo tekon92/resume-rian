@@ -40,7 +40,7 @@ export default new Router({
       component: Education
     },
     {
-      path: '/💻',
+      path: '/award',
       name: 'award',
       component: Education
     },
@@ -55,7 +55,7 @@ export default new Router({
       component: PDFGen
     },
     {
-      path: '/stories',
+      path: '/💻',
       name: 'Story',
       component: Story
     },

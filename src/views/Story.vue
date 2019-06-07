@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-    <h1 class="headline center">v-m-blog</h1>
-    <img src="../assets/logo.png" alt="Vue Logo">
+    <h1 class="headline center">My Daily Rants</h1>
+    <!-- <img src="../assets/logo.png" alt="Vue Logo"> -->
     <div class="sections">
       <div v-for="(section, index) in Object.keys(entries)" :key="index" class="group">
         <h2 class="center">{{ section }}</h2>
@@ -38,8 +38,8 @@ export default {
 }
 .headline {
   text-transform: uppercase;
-  margin: 4rem auto;
-  font-size: 4rem;
+  margin: 2rem auto;
+  font-size: 1.5rem;
 }
 img {
   display: block;
