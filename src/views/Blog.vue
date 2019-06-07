@@ -1,7 +1,7 @@
 <template>
   <div class="blog">
     <router-view></router-view>
-    <router-link to="/stories" tag="a" class="back">&laquo; Back</router-link>
+    <router-link to="/💻" tag="a" class="back">&laquo; Back</router-link>
   </div>
 </template>
 

@@ -18,16 +18,16 @@ for the first day im learning about `Simple Type`.
 6. Constant
 7. Type Annotations
 
-and the summary are: 
+and the summaries are: 
 
-1. you make variables using var and constant using let. it's preferable to use contants as often as possible.
+1. you make variables using `var` and constant using `let`. it's preferable to use contants as often as possible.
 
 ```swift
 var str = "Hello, playground"
 let taylor = "swift"
 ```
 
-2. string start and end with double quotes, but if you want them to run accross multiple lines you should use three sets of double quotes.
+2. `string` start and end with double quotes, but if you want them to run accross multiple lines you should use three sets of double quotes.
 
 ```swift
 var str1 = """
@@ -37,7 +37,7 @@ lines
 """
 ```
 
-3. integers hold whole numbers, doubles hold fractional numbers and booleans hold true or false.
+3. `integers` hold whole numbers, `doubles` hold fractional numbers and booleans hold true or false.
 
 ```swift
 var age = 38
@@ -45,10 +45,14 @@ var pi = 3.14
 var awesome = true
 ```
 
-4. String interpolation allows you to create strings from other variables and constants, placing their values inside your string.
+4. `String interpolation` allows you to create strings from other variables and constants, placing their values inside your string.
+
+```swift
 var score = 85
 var str = "Your score was \(score)"
-5.Swift uses type inference to assign each variable or constant a type, but you can provide explicit types if you want.
+```
+
+5.Swift uses `type inference` to assign each variable or constant a type, but you can provide explicit types if you want.
 
 ```swift
 let album: String = "Reputation"
