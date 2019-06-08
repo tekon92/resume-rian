@@ -19,22 +19,22 @@ and the summaries are:
   6. Enums are a way of grouping related values so you can use them without spelling mistakes.
   7. You can attach raw values to enums so the can be created from integers or strings, or you can add associated values to store additional about each case.
   8. Array, sets, and tuples can seem similiar at first, but they have distinc uses.
-    a. if you need a specific, fixed collections of related values where each items has a precise position or name, you should use tuple:
+  a. if you need a specific, fixed collections of related values where each items has a precise position or name, you should use tuple:
   
     ```swift
     let address = (house: 555, street: "Taylor Swift Avenue", city: "Nashville")
     ```
-    b. if you need a collection of values that must be uniques or you need to be able to check whether a specific item is in there extremely quickly, you should use a set
+  b. if you need a collection of values that must be uniques or you need to be able to check whether a specific item is in there extremely quickly, you should use a set
 
 ```swift
 let set = Set(["aardvark", "astronaut", "azalea"])
 ```
-    c. if you need a collection of values that can containe duplicates or the order of your items matters, you should use array.
+  c. if you need a collection of values that can containe duplicates or the order of your items matters, you should use array.
 
 ```swift
 let pythons = ["Eric", "Graham", "John", "Michael", "Terry", "Terry"]
 ```
-    d. if you need a collection of values just like arrays, but rather than storing things with an integer position you can access them using anything you want.
+  d. if you need a collection of values just like arrays, but rather than storing things with an integer position you can access them using anything you want.
 
   ```swift
   let heights = [
@@ -43,7 +43,7 @@ let pythons = ["Eric", "Graham", "John", "Michael", "Terry", "Terry"]
   ]
   heights["Taylor Swift"]
   ```
-    e.are a way of defining groups of related values in a way that makes them easier to use.This stops you from accidentally using different strings each time.
+  e.are a way of defining groups of related values in a way that makes them easier to use.This stops you from accidentally using different strings each time.
 
   ```swift
 enum Result {
@@ -55,19 +55,18 @@ let result4 = Result.failure
   ``` 
 
   9. creating empty collection
-    a. Dictionaries
+  a. Dictionaries
   ```swift
   var teams = [String: String]()
   var scores = Dictionaries<String, Int>()
   ```
-
-    b. Array
+  b. Array
   ```swift
   var results = [Int]()
   var results = Array<Int>()
   ```
 
-    c. Set
+  c. Set
   ```swift
   var words = Set<String>()
   var numbers = Set<Int>()
