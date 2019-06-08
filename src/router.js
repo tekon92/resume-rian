@@ -60,5 +60,9 @@ export default new Router({
       component: Story
     },
     ...blogRoutes
+    ,{
+      path: '*',
+      redirect: '/'
+    }
   ]
 })
