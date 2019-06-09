@@ -46,12 +46,12 @@ let pythons = ["Eric", "Graham", "John", "Michael", "Terry", "Terry"]
   e.are a way of defining groups of related values in a way that makes them easier to use.This stops you from accidentally using different strings each time.
 
   ```swift
-enum Result {
-    case success
-    case failure
-}
+  enum Result {
+      case success
+      case failure
+  }
 
-let result4 = Result.failure
+  let result4 = Result.failure
   ``` 
 
   9. creating empty collection
@@ -77,6 +77,6 @@ PS: anyway im creating twitter user interface using NUXT. you can find it here([
 
 
 ### Useful Links
-- [Hacking with Swift](https://www.hackingwithswift.com/100)
+- [Hacking with Swift](https://www.hackingwithswift.com/100/2)
 - [git](https://github.com/tekon92/nuxt-twitter)
 - [netlify](https://xenodochial-aryabhata-bac2b6.netlify.com/)

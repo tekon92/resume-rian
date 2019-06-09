@@ -66,4 +66,4 @@ hope i can finish this commitment for next 100 days and will let you know if a c
 ### Useful Links
 - [WWDC](https://wwdc.io)
 - [swiftUI](https://developer.apple.com/xcode/swiftui/)
-- [Hacking with Swift](https://www.hackingwithswift.com/100)
+- [Hacking with Swift](https://www.hackingwithswift.com/100/1)
