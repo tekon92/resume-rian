@@ -4,6 +4,7 @@ import Story from './views/Story.vue'
 import Home from './views/Home.vue'
 import Education from './views/Education.vue'
 import PDFGen from './components/PDFgen.vue'
+import Editor from './views/Editor.vue'
 
 Vue.use(Router)
 
@@ -53,6 +54,11 @@ export default new Router({
       path: '/pdf',
       name: 'pdf',
       component: PDFGen
+    },
+    {
+      path: '/editor',
+      name: 'editor',
+      component: Editor
     },
     {
       path: '/💻',
