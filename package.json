@@ -11,7 +11,7 @@
     "core-js": "^2.6.5",
     "lodash": "^4.17.11",
     "marked": "^0.6.2",
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.0",
     "pdfmake": "^0.1.56",
     "sass-loader": "^7.1.0",
     "vue": "^2.6.10",
